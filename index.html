@@ -151,9 +151,25 @@
 									</div>
 									<div id="snackbar">Email скопирован в буфер обмена.</div>
 								</div> -->
-								<div class="8u$ 12u$(medium)">
+								<div class="2u 12u$(medium)">
+									<div style="visibility: hidden;">.</div>
+								</div>
+								<div class="8u 12u$(medium)">
 									<!-- <p>Внимательно заполняйте поле <strong>&laquo;Ваш Email&raquo;</strong>!
 									<br />В случае неправильного заполнения Ваше обращение будет отправлено, но мы не сможем с Вами связаться.</p> -->
+									<div style="text-align:center; height:2.85rem; border-bottom:solid 1px; margin-bottom: 2rem 0; border-bottom-color: rgba(144, 144, 144, 0.25);"><h3>Наша электронная почта</h3></div><br />
+									<p>Можно скопировать наш Email-адрес и написать нам письмо на нашу электронную почту, или воспользуйтесь формой онлайн обращения ниже</p>
+									<div class="row uniform">
+										<div class="6u 12u$(xsmall)">
+											<input class="js-copytextarea" type="text" name="query" value="text@text.com" readonly="true" style="text-align:center;" />
+										</div>
+										<div class="6u$ 12u$(xsmall)">
+											<button onclick="myCopy();" class="button alt small icon fa-clipboard js-textareacopybtn fit">Скопировать адрес</button>
+										</div>
+									</div>
+									<br /><br />
+									
+									
 									<div style="text-align:center; height:2.85rem; border-bottom:solid 1px; margin-bottom: 2rem 0; border-bottom-color: rgba(144, 144, 144, 0.25);"><h3>Обращение онлайн</h3></div><br />
 									<form id="contact-form" method="post" action="https://formspree.io/huy.v.glaz@mail.ru">
 									<!-- <form method="post" action="mailto:test@test.com"> -->
@@ -184,11 +200,11 @@
 											</div>
 											<!-- Break -->
 											<div class="4u 12u$(small)">
-												<input type="radio" id="priority-low" value="Несрочно" name="priority" checked>
+												<input type="radio" id="priority-low" value="Несрочно" name="priority">
 												<label for="priority-low">Низная важность</label>
 											</div>
 											<div class="4u 12u$(small)">
-												<input type="radio" id="priority-normal" value="Обычная важность" name="priority">
+												<input type="radio" id="priority-normal" value="Обычная важность" name="priority" checked>
 												<label for="priority-normal">Обычная важность</label>
 											</div>
 											<div class="4u$ 12u$(small)">
@@ -211,8 +227,12 @@
 									<sup>Внимательно заполняйте поле <strong>&laquo;Ваш Email&raquo;</strong>!
 									<br />В случае неправильного заполнения Ваше обращение будет отправлено, но мы не сможем с Вами связаться.</sup>
 								</div>
+								<div class="2u 12u$(medium)">
+									<div style="visibility: hidden;">.</div>
+								</div>
 							</div>
 						</div>
+						<div id="snackbar">Email скопирован в буфер обмена.</div>
 						
 					</section>
 					<section id="four" style="text-align:center;" class="wrapper style1">
