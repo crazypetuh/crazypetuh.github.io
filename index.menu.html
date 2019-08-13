@@ -21,13 +21,45 @@
 		<!---->
 	</head>
 	<body>
+	
+<div class="nav-right visible-xs">
+  <div class="nav-button" id="btn">
+    <div class="bar top"></div>
+    <div class="bar middle"></div>
+    <div class="bar bottom"></div>
+  </div>
+</div>
+<!-- nav-right -->
 
+
+  <nav>
+    <div class="nav-right hidden-xs">
+      <div class="button" id="btn">
+        <div class="bar top"></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom"></div>
+      </div>
+    </div>
+    <!-- nav-right -->
+  </nav>
+
+
+<div class="sidebar">
+  <ul class="sidebar-list">
+    <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 1</a></li>
+    <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 2</a></li>
+    <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 3</a></li>
+    <li class="sidebar-item"><a href="#" class="sidebar-anchor">Item 4</a></li>
+  </ul>
+</div>
+	
 		<!-- Header -->
 			<header id="header">
 				<div class="logo"><a href="#">Магическая помощь <span>бесплатно для всех, кто нуждается</span></a></div>
 			</header>
 
 		<!-- Main -->
+		<main>
 			<section id="main">
 				<div class="inner">
 
@@ -40,6 +72,7 @@
 								<a href="#" onclick="return scrollDown();"><span></span></a>
 							</section>							
 						</div>
+						
 						<header class="special">
 							<h2>Средневековое учение, проверенное временем</h2>
 							<p>Fortunam suam quisque parat<br />Свою судьбу каждый находит сам</p>
@@ -131,7 +164,7 @@
 						</div>
 					</section>
 
-					<section id="two" class="wrapper style1">
+					<section id="contact" class="wrapper style1">
 						<header>
 							<h2>Напишите нам</h2>
 							<p>Fortes fortuna adjuvat<br />Смелым помогает судьба</p>
@@ -235,7 +268,7 @@
 						<div id="snackbar">Email скопирован в буфер обмена.</div>
 						
 					</section>
-					<section id="four" style="text-align:center;" class="wrapper style1">
+					<section id="helpus" style="text-align:center;" class="wrapper style1">
 						<header>
 							<h2>Помощь проекту</h2>
 							<p>Non ignara mali, miseris succurrere disco<br />Познав несчастье, я научился помогать страдальцам</p>
@@ -277,6 +310,7 @@
 					
 				</div>
 			</section>
+		</main>
 			
 		<!-- Footer -->
 			<footer id="footer">
@@ -299,26 +333,27 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
 			<script>
 				function scrollDown () {
 					$('html, body').animate({scrollTop: $("#section_main").offset().top}, 500);
 				};
 			</script>
 			<script>
-					var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
+				var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
 
-					copyTextareaBtn.addEventListener('click', function(event) {
-					  var copyTextarea = document.querySelector('.js-copytextarea');
-					  copyTextarea.select();
+				copyTextareaBtn.addEventListener('click', function(event) {
+				  var copyTextarea = document.querySelector('.js-copytextarea');
+				  copyTextarea.select();
 
-					  try {
-						var successful = document.execCommand('copy');
-						var msg = successful ? 'successful' : 'unsuccessful';
-						console.log('Copying text command was ' + msg);
-					  } catch (err) {
-						console.log('Oops, unable to copy');
-					  }
-					});
+				  try {
+					var successful = document.execCommand('copy');
+					var msg = successful ? 'successful' : 'unsuccessful';
+					console.log('Copying text command was ' + msg);
+				  } catch (err) {
+					console.log('Oops, unable to copy');
+				  }
+				});
 			</script>
 			<script>
 				function myCopy() {
@@ -329,6 +364,26 @@
 					// After 3 seconds, remove the show class from DIV
 					setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 				};
+			</script>
+			<script>
+				$(document).ready(function() {
+
+				  function toggleSidebar() {
+					$(".button").toggleClass("active");
+					$("main").toggleClass("move-to-left");
+					$(".sidebar-item").toggleClass("active");
+				  }
+
+				  $(".button").on("click tap", function() {
+					toggleSidebar();
+				  });
+
+				  $(document).keyup(function(e) {
+					if (e.keyCode === 27) {
+					  toggleSidebar();
+					}
+				  });
+				});
 			</script>
 	</body>
 </html>
