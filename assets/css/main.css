@@ -1,5 +1,5 @@
 @import url(font-awesome.min.css);
-/*@import url("https://fonts.googleapis.com/css?family=Spectral+SC:300,400,500,600,700");*/
+@import url("https://fonts.googleapis.com/css?family=Spectral+SC:300,400,500,600,700");
 @import url('https://fonts.googleapis.com/css?family=Lora:300,400,500,600,700');
 
 /*
@@ -3278,20 +3278,18 @@ However, delay the fade out process for 2.5 seconds */
 
 
 
-@import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic);
-body,
+/* body,
 html {
   height: 100%;
   padding: 0;
   margin: 0;
   font-family: 'Arimo', sans-serif;
 }
-
+ */
 main {
-  z-index: 10005;
+  z-index: 1;
   position: relative;
   height: 100%;
-  background-color: #2D3142;
   -webkit-transition: transform .7s ease-in-out;
   -moz-transition: transform .7s ease-in-out;
   -ms-transition: transform .7s ease-in-out;
@@ -3300,14 +3298,114 @@ main {
 }
 
 .sidebar {
-  height: 100%;
-  width: 400px;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  right: 0;
-  background-color: #EF8354;
+	height: 100%;
+	width: 400px;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	right: 0;
+	background-color: #EF8354;
+	display: none;
+  
+	animation: fadeOut .7s ease-in-out;
 }
+
+@keyframes fadeOut {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+
+    50% {
+        display: block;
+        opacity: 0.5;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+
+.sidebar.active {
+	display: block;
+
+	-webkit-animation: fadeInFromNone .7s ease-in-out;
+	-moz-animation: fadeInFromNone .7s ease-in-out;
+	-o-animation: fadeInFromNone .7s ease-in-out;
+	animation: fadeInFromNone .7s ease-in-out;
+}
+
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    1% {
+        visibility: visible;
+        opacity: 0;
+    }
+
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
 
 .bar {
   display: block;
