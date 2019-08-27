@@ -10,55 +10,51 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link type="text/css" rel="stylesheet" href="mmenu-light.css" />
+		<link type="text/css" rel="stylesheet" href="demo.css" />
 		
 		<!-- Favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-		<!-- <link rel="manifest" href="images/favicon/manifest.json"> -->
+		<link rel="manifest" href="images/favicon/manifest.json">
 		<link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="theme-color" content="#ffffff">
 		<!---->
 	</head>
 	<body>
 	
-<div class="nav-right visible-xs">
-  <div class="nav-button" id="btn1">
-    <div class="bar top"></div>
-    <div class="bar middle"></div>
-    <div class="bar bottom"></div>
-  </div>
-</div>
-<!-- nav-right -->
-
-
-
-<div class="sidebar">
-  <ul class="sidebar-list">
-    <li class="sidebar-item"><a href="#one" class="sidebar-anchor">Item 1</a></li>
-    <li class="sidebar-item"><a href="#three" class="sidebar-anchor">Item 2</a></li>
-    <li class="sidebar-item"><a href="#contact" class="sidebar-anchor">Item 3</a></li>
-    <li class="sidebar-item"><a href="#helpus" class="sidebar-anchor">Item 4</a></li>
-  </ul>
-</div>
+			<div class="header">
+				<a href="#menu"><span></span></a>
+				Demo
+				<nav id="menu">
+					<ul>
+						<li class="Selected"><a href="#">Home</a></li>
+						<li><span>About us</span>
+							<ul>
+								<li><a href="#about/history">History</a></li>
+								<li><span>The team</span>
+									<ul>
+										<li><a href="#about/team/management">Management</a></li>
+										<li><a href="#about/team/sales">Sales</a></li>
+										<li><a href="#helpus">Development</a></li>
+									</ul>
+								</li>
+								<li><a href="#about/address">Our address</a></li>
+							</ul>
+						</li>
+						<li><a href="#two">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
 	
+
 		<!-- Header -->
 			<header id="header">
 				<div class="logo"><a href="#">Магическая помощь <span>бесплатно для всех, кто нуждается</span></a></div>
 			</header>
 
 		<!-- Main -->
-		<main>
-			<nav>
-			<div class="nav-right hidden-xs">
-				<div class="button" id="btn2">
-				<div class="bar top"></div>
-				<div class="bar middle"></div>
-				<div class="bar bottom"></div>
-				</div>
-			</div>
-			</nav>
-		
 			<section id="main">
 				<div class="inner">
 
@@ -71,7 +67,6 @@
 								<a href="#" onclick="return scrollDown();"><span></span></a>
 							</section>							
 						</div>
-						
 						<header class="special">
 							<h2>Средневековое учение, проверенное временем</h2>
 							<p>Fortunam suam quisque parat<br />Свою судьбу каждый находит сам</p>
@@ -163,7 +158,7 @@
 						</div>
 					</section>
 
-					<section id="contact" class="wrapper style1">
+					<section id="two" class="wrapper style1">
 						<header>
 							<h2>Напишите нам</h2>
 							<p>Fortes fortuna adjuvat<br />Смелым помогает судьба</p>
@@ -205,9 +200,6 @@
 									<div style="text-align:center; height:2.85rem; border-bottom:solid 1px; margin-bottom: 2rem 0; border-bottom-color: rgba(144, 144, 144, 0.25);"><h3>Обращение онлайн</h3></div><br />
 									<form id="contact-form" method="post" action="https://briskforms.com/go/10d7e691ab54440058ef691a3ea94d90">
 									<!-- <form method="post" action="mailto:test@test.com"> -->
-										<input type="hidden" name="_language" value="ru" />
-										<input type="text"   name="_gotcha"   style="display:none" />
-										<input type="hidden" name="_next"     value="sent.html" />
 										<div class="row uniform">
 											<div class="6u 12u$(xsmall)">
 												<input type="text" id="name" name="name" value="" placeholder="Ваше имя" required />
@@ -218,7 +210,7 @@
 											<!-- Break -->
 											<div class="12u$">
 												<div class="select-wrapper">
-													<select name="_subject" id="category" required>
+													<select name="subject" id="category" required>
 														<option value="" >- Выберите тему обращения -</option>
 														<option value="Вернуть любимого человека">Вернуть любимого человека</option>
 														<option value="Омоложение">Красота</option>
@@ -267,7 +259,7 @@
 						<div id="snackbar">Email скопирован в буфер обмена.</div>
 						
 					</section>
-					<section id="helpus" style="text-align:center;" class="wrapper style1">
+					<section id="four" style="text-align:center;" class="wrapper style1">
 						<header>
 							<h2>Помощь проекту</h2>
 							<p>Non ignara mali, miseris succurrere disco<br />Познав несчастье, я научился помогать страдальцам</p>
@@ -309,7 +301,6 @@
 					
 				</div>
 			</section>
-		</main>
 			
 		<!-- Footer -->
 			<footer id="footer">
@@ -332,27 +323,26 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			
 			<script>
 				function scrollDown () {
 					$('html, body').animate({scrollTop: $("#section_main").offset().top}, 500);
 				};
 			</script>
 			<script>
-				var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
+					var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
 
-				copyTextareaBtn.addEventListener('click', function(event) {
-				  var copyTextarea = document.querySelector('.js-copytextarea');
-				  copyTextarea.select();
+					copyTextareaBtn.addEventListener('click', function(event) {
+					  var copyTextarea = document.querySelector('.js-copytextarea');
+					  copyTextarea.select();
 
-				  try {
-					var successful = document.execCommand('copy');
-					var msg = successful ? 'successful' : 'unsuccessful';
-					console.log('Copying text command was ' + msg);
-				  } catch (err) {
-					console.log('Oops, unable to copy');
-				  }
-				});
+					  try {
+						var successful = document.execCommand('copy');
+						var msg = successful ? 'successful' : 'unsuccessful';
+						console.log('Copying text command was ' + msg);
+					  } catch (err) {
+						console.log('Oops, unable to copy');
+					  }
+					});
 			</script>
 			<script>
 				function myCopy() {
@@ -364,34 +354,32 @@
 					setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 				};
 			</script>
-			<script>
-				$(document).ready(function() {
+			
+		<script src="mmenu-light.js"></script>
+		<script>
+			const menu = new MmenuLight( document.querySelector( '#menu' ), {
+				// title: 'Menu',
+				 theme: 'dark',
+				// selected: 'Selected'
+			});
+			menu.enable( 'all' ); // '(max-width: 900px)'
+			menu.offcanvas({
+				 position: 'right',// [| 'right']
+				// move: true,// [| false]
+				// blockPage: true,// [| false | 'modal']
+			});
 
-				  function toggleSidebar() {
-					$(".button").toggleClass("active");
-					$("main").toggleClass("move-to-left");
-					$(".sidebar").toggleClass("active");
-					$(".sidebar-item").toggleClass("active");
-				  }
+			//	Open the menu.
+			document.querySelector( 'a[href="#menu"]' )
+				.addEventListener( 'click', ( evnt ) => {
+					menu.open();
 
-				  /*$(".button").on("click tap", function() {
-					toggleSidebar();
-				  });*/
-
-				  $("#btn1").on("click tap", function() {
-					toggleSidebar();
-				  });
-
-				  $("#btn2").on("click tap", function() {
-					toggleSidebar();
-				  });
-
-				  $(document).keyup(function(e) {
-					if (e.keyCode === 27) {
-					  toggleSidebar();
-					}
-				  });
+					//	Don't forget to "preventDefault" and to "stopPropagation".
+					evnt.preventDefault();
+					evnt.stopPropagation();
 				});
-			</script>
+
+		</script>
+		
 	</body>
 </html>

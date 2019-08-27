@@ -3411,7 +3411,8 @@ main {
   display: block;
   height: 5px;
   width: 50px;
-  background-color: #EF8354;
+  /* background-color: #EF8354; */
+  background-color: #FBF8CD;
   margin: 10px auto;
 }
 
