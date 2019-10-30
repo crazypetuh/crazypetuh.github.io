@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 		
 		<!-- Favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
@@ -37,7 +38,8 @@
 						<div class="image fit flush">
 							<img src="images/pic02.jpg" alt="" />
 							<section id="section_main" class="demo">
-								<a href="#" onclick="return scrollDown();"><span></span></a>
+								<!-- <a href="#" onclick="return scrollDown();"><span></span></a> -->
+								<a href="section_main#" onclick="return scrollDown();"><span></span></a>
 							</section>							
 						</div>
 						<header class="special">
@@ -131,7 +133,7 @@
 						</div>
 					</section>
 
-					<section id="two" class="wrapper style1">
+					<section id="section_mail" class="wrapper style1">
 						<header>
 							<h2>Напишите нам</h2>
 							<p>Fortes fortuna adjuvat<br />Смелым помогает судьба</p>
@@ -290,6 +292,11 @@
 					&copy; &laquo;Лира&raquo; 2007 - 2019
 				</div>
 			</footer>
+			
+		<a href="#section_mail" class="float">
+			<i class="fa fa-envelope fa-lg my-float"></i>
+		</a>
+			
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -301,6 +308,17 @@
 				function scrollDown () {
 					$('html, body').animate({scrollTop: $("#section_main").offset().top}, 500);
 				};
+				
+				
+				$("a[href^='#']").click(function(e) {
+					e.preventDefault();
+					
+					var position = $($(this).attr("href")).offset().top;
+
+					$("body, html").animate({
+						scrollTop: position
+					} /* speed */ );
+				});				
 			</script>
 			<script>
 					var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
