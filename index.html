@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 		
 		<!-- Favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
@@ -37,7 +38,8 @@
 						<div class="image fit flush">
 							<img src="images/pic02.jpg" alt="" />
 							<section id="section_main" class="demo">
-								<a href="#" onclick="return scrollDown();"><span></span></a>
+								<!-- <a href="#" onclick="return scrollDown();"><span></span></a> -->
+								<a href="#section_main" onclick="return scrollDown();"><span></span></a>
 							</section>							
 						</div>
 						<header class="special">
@@ -131,7 +133,7 @@
 						</div>
 					</section>
 
-					<section id="two" class="wrapper style1">
+					<section id="section_mail" class="wrapper style1">
 						<header>
 							<h2>Напишите нам</h2>
 							<p>Fortes fortuna adjuvat<br />Смелым помогает судьба</p>
@@ -171,8 +173,9 @@
 									
 									
 									<div style="text-align:center; height:2.85rem; border-bottom:solid 1px; margin-bottom: 2rem 0; border-bottom-color: rgba(144, 144, 144, 0.25);"><h3>Обращение онлайн</h3></div><br />
-									<form id="contact-form" method="post" action="https://briskforms.com/go/10d7e691ab54440058ef691a3ea94d90">
-									<!-- <form method="post" action="mailto:test@test.com"> -->
+									
+									<!-- <form id="contact-form" method="post" action="https://briskforms.com/go/10d7e691ab54440058ef691a3ea94d90"> -->
+									<form id="contact-form" method="post" action="http://f0328339.xsph.ru/sender/sender.php">
 										<div class="row uniform">
 											<div class="6u 12u$(xsmall)">
 												<input type="text" id="name" name="name" value="" placeholder="Ваше имя" required />
@@ -183,7 +186,7 @@
 											<!-- Break -->
 											<div class="12u$">
 												<div class="select-wrapper">
-													<select name="subject" id="category" required>
+													<select name="subject" id="subject" required>
 														<option value="" >- Выберите тему обращения -</option>
 														<option value="Вернуть любимого человека">Вернуть любимого человека</option>
 														<option value="Омоложение">Красота</option>
@@ -286,9 +289,14 @@
 					</ul>
 				</div>-->
 				<div class="copyright">
-					&copy; &laquo;Лира&raquo; 2017
+					&copy; &laquo;Лира&raquo; 2007 - 2019
 				</div>
 			</footer>
+			
+		<a href="#section_mail" class="float">
+			<i class="fa fa-envelope fa-lg my-float"></i>
+		</a>
+			
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -300,6 +308,17 @@
 				function scrollDown () {
 					$('html, body').animate({scrollTop: $("#section_main").offset().top}, 500);
 				};
+				
+				
+				$("a[href^='#']").click(function(e) {
+					e.preventDefault();
+					
+					var position = $($(this).attr("href")).offset().top;
+
+					$("body, html").animate({
+						scrollTop: position
+					} /* speed */ );
+				});				
 			</script>
 			<script>
 					var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
