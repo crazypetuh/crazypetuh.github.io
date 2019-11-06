@@ -279,7 +279,16 @@
 								<p>Мы не назначаем цену за наши услуги и оказываем их на добровольной основе, однако если у Вас есть желание и возможность помочь нам оставаться независимыми, мы рады принять любое пожертвование. Вы можете указать любую сумму.<br />Большое спасибо за Ваш вклад!</p>
 							</div>
 							<div class="6u$ 12u$(medium)" style="text-align:left;">
-								<form id="donateform"> 
+								<p>
+									Вы будете направлены на форму помощи проекту.
+								</p>
+								<form action="https://my.qiwi.com/Anzhela-MCZTTmP_w0">
+									<div style="text-align:center;">
+										<input type="submit" class="button special" value="Помочь">
+									</div>
+								</form>
+								
+								<!-- <form id="donateform"> 
 									<input type="hidden" name="id" value="0" />
 									<input type="hidden" name="quickpay-form" value="donate" />
 									<input type="hidden" name="targets" value="Безвозмездная помощь" />
@@ -299,9 +308,9 @@
 										<label for="yadMC">С мобильного</label></li>
 									</ul>
 									<div style="text-align:center;">
-										<input type="button" onclick="Donate()" class="button special" value="Помочь">
+										
 									</div>
-								</form>
+								</form> -->
 							</div>
 						</div>
 					</div>
@@ -337,30 +346,6 @@
 			
 			<script>
 				function Donate(){
-					let donation = {
-						id: 999999999999,
-						sum: {
-							amount: 100,
-							currency: 643
-						},
-						paymentMethod: {
-							type: "Account",
-							accountId: "643"
-						},
-						comment: "test",
-						fields: {
-							account: "+79275766254"
-						}
-					};
-					$.ajax({
-						type: "POST",
-						url: "https://edge.qiwi.com/sinap/api/v2/terms/99/payments",
-						data: JSON.stringify(donation),
-						success: function(){
-							alert("qiwi donation success!");
-						},
-						contentType : "application/json"
-					});
 				}
 			</script>
 			
