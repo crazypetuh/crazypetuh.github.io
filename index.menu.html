@@ -279,8 +279,8 @@
 								<p>Мы не назначаем цену за наши услуги и оказываем их на добровольной основе, однако если у Вас есть желание и возможность помочь нам оставаться независимыми, мы рады принять любое пожертвование. Вы можете указать любую сумму.<br />Большое спасибо за Ваш вклад!</p>
 							</div>
 							<div class="6u$ 12u$(medium)" style="text-align:left;">
-								<form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml"> 
-									<input type="hidden" name="receiver" value="410015783473734" />
+								<form id="donateform"> 
+									<input type="hidden" name="id" value="0" />
 									<input type="hidden" name="quickpay-form" value="donate" />
 									<input type="hidden" name="targets" value="Безвозмездная помощь" />
 									<span>Сумма пожертвования в рублях</span><input type="number" min="50" step="50" name="sum" value="500" placeholder="500" required /><br />
@@ -298,7 +298,9 @@
 										<li><input type="radio" name="paymentType" value="MC" id="yadMC">
 										<label for="yadMC">С мобильного</label></li>
 									</ul>
-									<div style="text-align:center;"><input type="submit" class="button special" value="Помочь"></div>
+									<div style="text-align:center;">
+										<input type="button" onclick="Donate()" class="button special" value="Помочь">
+									</div>
 								</form>
 							</div>
 						</div>
@@ -332,6 +334,35 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<script>
+				function Donate(){
+					let donation = {
+						id: 999999999999,
+						sum: {
+							amount: 100,
+							currency: 643
+						},
+						paymentMethod: {
+							type: "Account",
+							accountId: "643"
+						},
+						comment: "test",
+						fields: {
+							account: "+79275766254"
+						}
+					};
+					$.ajax({
+						type: "POST",
+						url: "https://edge.qiwi.com/sinap/api/v2/terms/99/payments",
+						data: JSON.stringify(donation),
+						success: function(){
+							alert("qiwi donation success!");
+						},
+						contentType : "application/json"
+					});
+				}
+			</script>
 			
 			<script>
 				function scrollDown () {
