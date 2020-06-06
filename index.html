@@ -22,9 +22,9 @@
 		<!---->
 		
 		<script>
-		var host = "crazypetuh.github.io";
-		if ((host == window.location.host) && (window.location.protocol != "https:"))
-			window.location.protocol = "https";
+			if (location.protocol !== 'https:') {
+				location.replace(`https:${location.href.substring(location.protocol.length)}`);
+			}
 		</script>
 		
 		<!-- Yandex.Metrika counter -->
