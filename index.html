@@ -34,8 +34,28 @@
 				webvisor:true
 		   });
 		</script>
+		
 		<noscript><div><img src="https://mc.yandex.ru/watch/56134795" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 		<!-- /Yandex.Metrika counter -->		
+		
+		<!-- Google Recaptcha v3 counter -->
+		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<!-- /Google Recaptcha v3 counter -->
+		
+		<script>
+			// your function
+			var stopper = function(event) {
+				alert("catch you");
+				event.preventDefault();
+			};
+
+			// your form
+			var form = document.getElementById("contact-form");
+
+			// attach event listener
+			form.addEventListener("submit", stopper, true);
+		</script>
+		
 	</head>
 	<body>
 
