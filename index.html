@@ -48,20 +48,6 @@
 		<script src="https://www.google.com/recaptcha/api.js"></script>
 		<!-- /Google Recaptcha v3 counter -->
 		
-		<script>
-			// your function
-			var stopper = function(event) {
-				alert("catch you");
-				event.preventDefault();
-			};
-
-			// your form
-			var form = document.getElementById("contact-form");
-
-			// attach event listener
-			form.addEventListener("submit", stopper, true);
-		</script>
-		
 	</head>
 	<body>
 
@@ -397,5 +383,20 @@
 					setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 				};
 			</script>
+
+			<script>
+				// your function
+				var stopper = function(event) {
+					alert("catch you");
+					event.preventDefault();
+				};
+
+				// your form
+				var form = document.getElementById("contact-form");
+
+				// attach event listener
+				form.addEventListener("submit", stopper, true);
+			</script>
+			
 	</body>
 </html>
