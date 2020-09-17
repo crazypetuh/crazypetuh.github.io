@@ -22,9 +22,9 @@
 		<!---->
 		
 		<script>
-			if (location.protocol !== 'https:') {
-				location.replace(`https:${location.href.substring(location.protocol.length)}`);
-			}
+			//if (location.protocol !== 'https:') {
+				//location.replace(`https:${location.href.substring(location.protocol.length)}`);
+			//}
 		</script>
 		
 		<!-- Yandex.Metrika counter -->
@@ -246,7 +246,7 @@
 											<!-- Break -->
 											<div class="12u$">
 												<ul class="actions">
-													<li><input type="submit" value="Отправить письмо" class="special" /></li>
+													<li><button type="submit" class="special g-recaptcha" data-sitekey="6LdcyswZAAAAAB0KiRnLDQVsbHJs6X1SaEr0Vsv2" data-callback='onSubmit'>Отправить письмо</button></li>
 													<li><input type="reset" value="Очистить" class="alt" /></li>
 												</ul>
 											</div>
@@ -386,16 +386,25 @@
 
 			<script>
 				// your function
-				var stopper = function(event) {
-					alert("catch you");
-					event.preventDefault();
-				};
+				//var stopper = function(event) {
+					//event.preventDefault();
+					//grecaptcha.ready(function() {
+						//grecaptcha.execute('6LdcyswZAAAAAB0KiRnLDQVsbHJs6X1SaEr0Vsv2', {action: 'submit'}).then(function(token) {
+							// Add your logic to submit to your backend server here.
+						//});
+					//});
+				//};
 
 				// your form
-				var form = document.getElementById("contact-form");
+				//var form = document.getElementById("contact-form");
 
 				// attach event listener
-				form.addEventListener("submit", stopper, true);
+				//form.addEventListener("submit", stopper, true);
+				
+				function onSubmit(token) {
+					//document.getElementById("contact-form").submit();
+					alert("submit");
+				}
 			</script>
 			
 	</body>
