@@ -45,7 +45,15 @@
 		<!-- /Yandex.Metrika counter -->		
 		
 		<!-- Google Recaptcha v3 counter -->
-		<script src="https://www.google.com/recaptcha/api.js"></script>
+		<script src="https://www.google.com/recaptcha/api.js?render=6Lee8dgZAAAAAB9BGvBMhA-4xS9UuBilYPerAAwr"></script>
+		<script>
+			grecaptcha.ready(function () {
+				grecaptcha.execute('6Lee8dgZAAAAAB9BGvBMhA-4xS9UuBilYPerAAwr', { action: 'contact' }).then(function (token) {
+					var recaptchaResponse = document.getElementById('recaptchaResponse');
+					recaptchaResponse.value = token;
+				});
+			});
+		</script>		
 		<!-- /Google Recaptcha v3 counter -->
 		
 	</head>
@@ -246,11 +254,12 @@
 											<!-- Break -->
 											<div class="12u$">
 												<ul class="actions">
-													<li><button type="submit" class="special g-recaptcha" data-sitekey="6LdcyswZAAAAAB0KiRnLDQVsbHJs6X1SaEr0Vsv2" data-callback='onSubmit'>Отправить письмо</button></li>
+													<li><input type="submit" class="special">Отправить письмо</input></li>
 													<li><input type="reset" value="Очистить" class="alt" /></li>
 												</ul>
 											</div>
 										</div>
+										<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
 									</form>
 									<sup>Внимательно заполняйте поле <strong>&laquo;Ваш Email&raquo;</strong>!
 									<br />В случае неправильного заполнения Ваше обращение будет отправлено, но мы не сможем с Вами связаться.</sup>
@@ -401,10 +410,10 @@
 				// attach event listener
 				//form.addEventListener("submit", stopper, true);
 				
-				function onSubmit(token) {
-					document.getElementById("contact-form").submit();
+				//function onSubmit(token) {
+					//document.getElementById("contact-form").submit();
 					//alert("submit");
-				}
+				//}
 			</script>
 			
 	</body>
